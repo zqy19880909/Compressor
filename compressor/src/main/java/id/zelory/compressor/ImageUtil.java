@@ -56,6 +56,12 @@ class ImageUtil {
 
         int actualHeight = options.outHeight;
         int actualWidth = options.outWidth;
+        
+        if(actualWidth<0||actualHeight<0){
+            Bitmap bitmap2 = BitmapFactory.decodeFile(filePath)
+            actualWidth = bitmap2.getWidth();
+            actualHeight = bitmap2.getHeight();
+        }
 
         float imgRatio = (float)actualWidth / actualHeight;
         float maxRatio = maxWidth / maxHeight;
